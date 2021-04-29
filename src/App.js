@@ -17,7 +17,7 @@ return (
     <MovieCounter></MovieCounter>
     
     {
-      nayoks.map(nk => <Nayok name={nk.name} key={nk.id} email={nk.email}></Nayok>)
+      nayoks.map(nk => <Nayok name={nk.name} key={nk.id} email={nk.email} address={nk.address}></Nayok>)
     }
     
   </div>
@@ -53,12 +53,21 @@ function Nayok(props){
   const nayokStyle = {
     border: '2px solid green',
     marginBottom: '20px',
-    backgroundColor: 'whitesmoke'
+    backgroundColor: 'whitesmoke',
+    textAlign: 'left',
+    paddingLeft: '20%'
   }
   return (
     <div style={nayokStyle}>
       <h1> Name : {props.name}</h1>
       <h3>Email : {props.email || 25}</h3>
+      <h1>Address : </h1>
+      <h2>street : {props.address.street}</h2>
+      <h3>suite : {props.address.suite}</h3>
+      <h3>city : {props.address.city}</h3>
+      <h3>zipcode : {props.address.zipcode}</h3>
+      <h3>geo : [{props.address.geo.lat}</h3>
+      <h3>{props.address.geo.lng}]</h3>
       
     </div>
   )
